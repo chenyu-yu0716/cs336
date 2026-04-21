@@ -373,21 +373,22 @@ def save_vocab_and_merges(dir_path, vocab, merges):
 
 
 def main():
+    import cProfile
     import time
 
-    input_path = "./data/TinyStories/TinyStories-train.txt"
+    profiler = cProfile.Profile()
+    profiler.enable()
+
+    input_path = "../data/TinyStories/TinyStories-train.txt"
     special_tokens = ["<|endoftext|>"]
     vocab_size = 1500
-    start_time = time.time()
-    vocab, merges = train_bpe(input_path, vocab_size, special_tokens)
-    costs = time.time() - start_time
-    save_vocab_and_merges("./results/non-parallel", vocab, merges)
-    print(f"Train BPE on TinyStories costs {costs:.2f} seconds ON NON-PARALLEL")
 
     start_time = time.time()
     vocab, merges = parallel_train_bpe(input_path, vocab_size, special_tokens)
     costs = time.time() - start_time
-    save_vocab_and_merges("./results/parallel", vocab, merges)
+    profiler.disable()
+    profiler.dump_stats("bpe.prof")
+    save_vocab_and_merges("./results/test/parallel", vocab, merges)
     print(f"Train BPE on TinyStories costs {costs:.2f} seconds ON PARALLEL")
 
 
