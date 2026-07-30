@@ -6,18 +6,24 @@ Stanford CS336 coursework monorepo.
 
 | Directory | Description |
 |-----------|-------------|
-| [`assignment1/`](assignment1/) | Assignment 1: Basics (from [stanford-cs336/assignment1-basics](https://github.com/stanford-cs336/assignment1-basics)) |
+| [`assignment1/`](assignment1/) | **2026** Assignment 1 starter ([upstream](https://github.com/stanford-cs336/assignment1-basics), v26.x) |
+| [`assignment1-2025/`](assignment1-2025/) | Archived **2025** Assignment 1 work (reference only; do not mix with 2026) |
 
-## Setup
+Work in `assignment1/` for the current course. Treat `assignment1-2025/` as read-only archive.
 
-Each assignment manages its own environment with `uv`. See the README inside the assignment folder.
-
-### Download data (Assignment 1)
-
-Datasets and model checkpoints are **not** tracked by git. From the assignment directory:
+## Setup (2026 Assignment 1)
 
 ```bash
-mkdir -p data && cd data
+cd assignment1
+uv run pytest   # initially fails with NotImplementedError until you fill in adapters
+```
+
+### Download data
+
+Datasets and model checkpoints are **not** tracked by git:
+
+```bash
+mkdir -p assignment1/data && cd assignment1/data
 wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-train.txt
 wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt
 wget https://huggingface.co/datasets/stanford-cs336/owt-sample/resolve/main/owt_train.txt.gz
