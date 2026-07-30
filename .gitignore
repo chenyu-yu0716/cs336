@@ -1,0 +1,114 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.code-workspace
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+secrets/
+
+# --- Large data & models (do not commit) ---
+# Local datasets (download separately; see assignment READMEs)
+/data/
+data/
+!**/tests/**
+
+# Common large data / archive formats
+*.bin
+*.idx
+*.h5
+*.hdf5
+*.arrow
+*.parquet
+*.csv.gz
+*.tsv.gz
+*.jsonl.gz
+*.txt.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# Model checkpoints & weights (keep assignment test fixtures)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+*.gguf
+*.ggml
+*.npy
+*.npz
+!**/tests/**/*.pt
+!**/tests/**/*.pth
+!**/tests/**/*.pkl
+!**/tests/**/*.npy
+!**/tests/**/*.npz
+
+checkpoints/
+checkpoint/
+ckpts/
+ckpt/
+**/checkpoints/
+**/checkpoint/
+**/ckpts/
+
+# Caches
+.cache/
+**/huggingface/
+
+# Logs & experiment tracking
+wandb/
+runs/
+outputs/
+output/
+logs/
+*.log
+lightning_logs/
+mlruns/
+
+# OS
+Thumbs.db
+Desktop.ini
