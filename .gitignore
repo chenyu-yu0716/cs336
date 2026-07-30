@@ -48,7 +48,12 @@ secrets/
 # Local datasets (download separately; see assignment READMEs)
 /data/
 data/
+**/data/
 !**/tests/**
+
+# Course materials / lectures (large)
+spring2025-lectures/
+lectures/
 
 # Common large data / archive formats
 *.bin
@@ -94,6 +99,10 @@ ckpt/
 **/checkpoints/
 **/checkpoint/
 **/ckpts/
+
+# Training / experiment outputs
+results/
+**/results/
 
 # Caches
 .cache/
